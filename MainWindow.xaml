@@ -1,0 +1,20 @@
+﻿<Window x:Class="WPFcalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFcalculator"
+        mc:Ignorable="d"
+        Title="Calculator" Height="600" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Standard">
+                <local:StandardUC/>
+            </TabItem>
+
+            <TabItem Header="Programmer">
+                <local:ProgrammerUC/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

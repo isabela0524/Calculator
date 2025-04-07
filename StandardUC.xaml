@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="WPFcalculator.StandardUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFcalculator"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="400">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Cut" Click="Menu_Cut_Click"/>
+                <MenuItem Header="Copy" Click="Menu_Copy_Click"/>
+                <MenuItem Header="Paste" Click="Menu_Paste_Click"/>
+                <MenuItem Header="Digit Grouping" Click="Digit_Grouping_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="Menu_About_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="Display" Text="{Binding DisplayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+         FontSize="36" TextAlignment="Right" IsReadOnly="True" Height="80" Margin="0,0,0,10"/>
+
+            <StackPanel Grid.Row="1" Margin="5,5,5,5">
+                <UniformGrid Columns="6" Margin="0,0,0,10">
+                    <Button Content="MC" Click="MemoryClear_Click"/>
+                    <Button Content="MR" Click="MemoryRecall_Click"/>
+                    <Button Content="M+" Click="MemoryAdd_Click"/>
+                    <Button Content="M-" Click="MemorySubtract_Click"/>
+                    <Button Content="MS" Click="MemoryStore_Click"/>
+                    <Button Content="Mv" Click="MemoryView_Click"/>
+                </UniformGrid>
+
+                <UniformGrid Columns="4" Rows="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Button Content="%" Click="Operator_Click" Height="60"/>
+                    <Button Content="CE" Click="ClearEntry_Click" Height="60"/>
+                    <Button Content="C" Click="Clear_Click" Height="60"/>
+                    <Button Content="⌫" Click="Backspace_Click" Height="60"/>
+
+                    <Button Content="1/x" Click="Reciprocal_Click" Height="60"/>
+                    <Button Content="x²" Click="Square_Click" Height="60"/>
+                    <Button Content="²√x" Click="SquareRoot_Click" Height="60"/>
+                    <Button Content="÷" Click="Operator_Click" Height="60"/>
+
+                    <Button Content="7" Click="Number_Click" Height="60"/>
+                    <Button Content="8" Click="Number_Click" Height="60"/>
+                    <Button Content="9" Click="Number_Click" Height="60"/>
+                    <Button Content="x" Click="Operator_Click" Height="60"/>
+
+                    <Button Content="4" Click="Number_Click" Height="60"/>
+                    <Button Content="5" Click="Number_Click" Height="60"/>
+                    <Button Content="6" Click="Number_Click" Height="60"/>
+                    <Button Content="-" Click="Operator_Click" Height="60"/>
+
+                    <Button Content="1" Click="Number_Click" Height="60"/>
+                    <Button Content="2" Click="Number_Click" Height="60"/>
+                    <Button Content="3" Click="Number_Click" Height="60"/>
+                    <Button Content="+" Click="Operator_Click" Height="60"/>
+
+                    <Button Content="+/-" Click="Negate_Click" Height="60"/>
+                    <Button Content="0" Click="Number_Click" Height="60"/>
+                    <Button Content="." Click="Decimal_Click" Height="60"/>
+                    <Button Content="="  Height="60" Click="Equals_Click"/>
+                </UniformGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
